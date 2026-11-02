@@ -8,8 +8,8 @@ services:
       dockerfile: TicketHub.Api/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=tickethub-sql-server;Database=TicketHubDb;User Id=sa;Password=${TICKETHUB_PASSWORD}; TrustServerCertificate=True;
-      - Redis__Configuration=tickethub-redis:6379,password=${REDIS_PASSWORD}
+      - ConnectionStrings__TicketHub=Server=tickethub-sql-server;Database=TicketHub;User Id=sa;Password=${TICKETHUB_PASSWORD}; TrustServerCertificate=True;
+      - ConnectionStrings__Redis=tickethub-redis:6379,password=${REDIS_PASSWORD}
     ports:
       - 5000:8080
     depends_on:
