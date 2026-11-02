@@ -1,6 +1,26 @@
 name: tickethub
 
 services:
+
+  tickethub-api:
+    build:
+      context: .
+      dockerfile: TicketHub.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=tickethub-sql-server;Database=TicketHubDb;User Id=sa;Password=${TICKETHUB_PASSWORD}; TrustServerCertificate=True;
+      - Redis__Configuration=tickethub-redis:6379,password=${REDIS_PASSWORD}
+    ports:
+      - 5000:8080
+    depends_on:
+      sql-server:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - tickethub-network
+    restart: unless-stopped
+  
   sql-server:
     image: mcr.microsoft.com/mssql/server:2025-latest
     container_name: tickethub-sql-server
