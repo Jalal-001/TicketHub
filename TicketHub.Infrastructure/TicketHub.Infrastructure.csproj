@@ -1,20 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UserSecretsId>5d34b67c-2456-41b9-a0bf-a3e37f91dd7d</UserSecretsId>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" />
-    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" />
+		<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="9.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.22" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.22">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.22" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.14" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.14" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TicketHub.Application\TicketHub.Application.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\TicketHub.Application\TicketHub.Application.csproj" />
+	</ItemGroup>
 
 </Project>
