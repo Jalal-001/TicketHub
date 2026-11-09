@@ -13,8 +13,8 @@ namespace TicketHub.Infrastructure
             var redisConnectionString = configuration.GetConnectionString("Redis") ?? throw new InvalidOperationException("Redis connection string is not configured.");
 
             services.AddHealthChecks()
-                .AddSqlServer(ticketHubConnectionString)
-                .AddRedis(redisConnectionString);
+                    .AddSqlServer(ticketHubConnectionString)
+                    .AddRedis(redisConnectionString);
 
             services.AddDbContext<Databases.MSSQL.DbContexts.TicketHubDbContext>(options =>
             {
@@ -25,6 +25,7 @@ namespace TicketHub.Infrastructure
                     options.EnableSensitiveDataLogging();
                     options.EnableDetailedErrors();
                 }
+                options.AddInterceptors(new Interceptors.AuditableEntityInterceptor());
             });
             return services;
         }
