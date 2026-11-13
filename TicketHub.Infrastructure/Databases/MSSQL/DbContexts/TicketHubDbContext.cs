@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TicketHub.Application.Abstractions;
 using TicketHub.Domain.Entities;
 
 namespace TicketHub.Infrastructure.Databases.MSSQL.DbContexts
 {
-    public class TicketHubDbContext : DbContext
+    public class TicketHubDbContext : DbContext, IUnitOfWork
     {
         public TicketHubDbContext(DbContextOptions<TicketHubDbContext> options) : base(options)
         {

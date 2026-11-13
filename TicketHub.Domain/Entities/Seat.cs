@@ -2,7 +2,7 @@
 {
     public class Seat : AuditableEntity
     {
-        public required int EventId { get; set; }
+        public int EventId { get; set; }
         public required int Row { get; set; }
         public required int Number { get; set; }
         public required decimal Price { get; set; }

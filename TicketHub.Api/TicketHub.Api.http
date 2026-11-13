@@ -1,6 +1,15 @@
 @TicketHub.Api_HostAddress = http://localhost:5043
 
-GET {{TicketHub.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+POST https://localhost:7089/events
+Content-Type: application/json
+
+{
+  "name": "Rock Night",
+  "venue": "Baku Crystal Hall",
+  "startsAt": "2027-01-15T19:00:00Z",
+  "rows": 20,
+  "seatsPerRow": 50,
+  "price": 25
+}
 
 ###

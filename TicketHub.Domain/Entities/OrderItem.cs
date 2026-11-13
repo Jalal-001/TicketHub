@@ -2,7 +2,7 @@
 {
     public class OrderItem : BaseEntity
     {
-        public required int OrderId { get; set; }
+        public int OrderId { get; set; }
         public required int SeatId { get; set; }
         public required decimal Price { get; set; }
 
