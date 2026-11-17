@@ -7,6 +7,7 @@ COPY ["TicketHub.Api/TicketHub.Api.csproj", "TicketHub.Api/"]
 COPY ["TicketHub.Domain/TicketHub.Domain.csproj", "TicketHub.Domain/"] 
 COPY ["TicketHub.Application/TicketHub.Application.csproj", "TicketHub.Application/"]
 COPY ["TicketHub.Infrastructure/TicketHub.Infrastructure.csproj", "TicketHub.Infrastructure/"]
+COPY ["Directory.Packages.props", "./"]
 RUN dotnet restore "TicketHub.Api/TicketHub.Api.csproj"
 
 COPY . .
