@@ -59,7 +59,7 @@ namespace TicketHub.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Events");
+                    b.ToTable("Events", (string)null);
                 });
 
             modelBuilder.Entity("TicketHub.Domain.Entities.Order", b =>
@@ -100,7 +100,7 @@ namespace TicketHub.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("TicketHub.Domain.Entities.OrderItem", b =>
@@ -127,7 +127,7 @@ namespace TicketHub.Infrastructure.Migrations
 
                     b.HasIndex("SeatId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("TicketHub.Domain.Entities.Reservation", b =>
@@ -172,7 +172,7 @@ namespace TicketHub.Infrastructure.Migrations
 
                     b.HasIndex("SeatId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("TicketHub.Domain.Entities.Seat", b =>
@@ -222,7 +222,7 @@ namespace TicketHub.Infrastructure.Migrations
                     b.HasIndex("EventId", "Row", "Number")
                         .IsUnique();
 
-                    b.ToTable("Seats");
+                    b.ToTable("Seats", (string)null);
                 });
 
             modelBuilder.Entity("TicketHub.Domain.Entities.OrderItem", b =>

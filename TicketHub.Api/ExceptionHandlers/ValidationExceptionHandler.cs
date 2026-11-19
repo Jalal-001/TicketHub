@@ -19,7 +19,7 @@ namespace TicketHub.Api.ExceptionHandlers
                         g => g.Select(e => e.ErrorMessage).ToArray()
                     );
 
-                logger.LogWarning("Validation failed: {@Errors}", errors);
+                logger.LogWarning("Validation failed: {Errors}", errors);
 
                 return await problemDetailsService.TryWriteAsync(new ProblemDetailsContext
                 {

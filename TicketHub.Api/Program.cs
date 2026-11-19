@@ -16,9 +16,14 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpoints(typeof(Program).Assembly);
 builder.Services.AddControllers();
 
+
+// Add exception handlers
 builder.Services.AddExceptionHandler<ValidationExceptionHandler>();
 builder.Services.AddExceptionHandler<NotFoundExceptionHandler>();
+builder.Services.AddExceptionHandler<DomainExceptionHandler>();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+
 builder.Services.AddProblemDetails();
 
 var app = builder.Build();

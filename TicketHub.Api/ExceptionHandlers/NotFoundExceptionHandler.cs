@@ -11,7 +11,7 @@ namespace TicketHub.Api.ExceptionHandlers
         {
             if (exception is NotFoundException notFoundException)
             {
-                logger.LogWarning("A NotFoundException occurred: {@NotFoundMessage}", notFoundException.Message);
+                logger.LogWarning("A NotFoundException occurred: {NotFoundMessage}", notFoundException.Message);
                 httpContext.Response.StatusCode = StatusCodes.Status404NotFound;
 
                 return await problemDetailsService.TryWriteAsync(new ProblemDetailsContext

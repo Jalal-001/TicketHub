@@ -52,26 +52,9 @@ namespace TicketHub.Infrastructure
 
                 Event SeedData()
                 {
-                    var newEvent = new Event
-                    {
-                        Name = "Sample event",
-                        Venue = "Sample palace",
-                        StartsAt = DateTime.UtcNow.AddMonths(1)
-                    };
+                    var newEvent = new Event("Sample event", "Sample palace", DateTime.UtcNow.AddMonths(1));
+                    newEvent.AddSeats(20, 50, 19.99m);
 
-                    for (int j = 1; j <= 20; j++)
-                    {
-                        for (int k = 1; k <= 50; k++)
-                        {
-                            var seat = new Seat
-                            {
-                                Row = j,
-                                Number = k,
-                                Price = 19.99m
-                            };
-                            newEvent.Seats.Add(seat);
-                        }
-                    }
                     return newEvent;
                 }
             });

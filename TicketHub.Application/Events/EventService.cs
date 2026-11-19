@@ -27,31 +27,8 @@ namespace TicketHub.Application.Events
                 throw new ValidationException(validationResult.Errors);
             }
 
-            var newEvent = new Event
-            {
-                Name = command.Name,
-                Venue = command.Venue,
-                StartsAt = command.StartsAt,
-                Seats = SeedSeats()
-            };
-
-            IList<Seat> SeedSeats()
-            {
-                var seats = new List<Seat>();
-                for (int row = 1; row <= command.Rows; row++)
-                {
-                    for (int column = 1; column <= command.SeatsPerRow; column++)
-                    {
-                        seats.Add(new Seat
-                        {
-                            Row = row,
-                            Number = column,
-                            Price = command.Price
-                        });
-                    }
-                }
-                return seats;
-            }
+            var newEvent = new Event(command.Name, command.Venue, command.StartsAt);
+            newEvent.AddSeats(command.Rows, command.SeatsPerRow, command.Price);
 
             await _eventRepository.AddAsync(newEvent, cancellationToken);
             await _unitOfWork.SaveChangesAsync(cancellationToken);

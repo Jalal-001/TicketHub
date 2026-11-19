@@ -9,7 +9,7 @@ namespace TicketHub.Api.ExceptionHandlers
     {
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
-            logger.LogError("An unhandled exception occurred: {@Exception}", exception);
+            logger.LogError("An unhandled exception occurred: {Exception}", exception);
 
             httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
