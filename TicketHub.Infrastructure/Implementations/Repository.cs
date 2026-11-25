@@ -7,7 +7,7 @@ namespace TicketHub.Infrastructure.Implementations
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private readonly TicketHubDbContext _ticketHubDbContext;
+        protected readonly TicketHubDbContext _ticketHubDbContext;
 
         public Repository(TicketHubDbContext ticketHubDbContext)
         {

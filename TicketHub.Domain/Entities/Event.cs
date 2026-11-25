@@ -16,8 +16,8 @@ namespace TicketHub.Domain.Entities
             StartsAt = startsAt;
         }
 
-        public string Name { get; private set; }
-        public string Venue { get; private set; }
+        public string Name { get; private set; } = null!;
+        public string Venue { get; private set; } = null!;
         public DateTime StartsAt { get; private set; }
 
         //Navigation property for Seats

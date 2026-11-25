@@ -19,10 +19,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Events\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\TicketHub.Domain\TicketHub.Domain.csproj" />
 	</ItemGroup>
 

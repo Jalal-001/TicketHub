@@ -55,8 +55,8 @@ namespace TicketHub.Domain.Entities
 
     public enum SeatStatus
     {
-        Available,
-        Reserved,
-        Sold
+        Available = 0,
+        Reserved = 1,
+        Sold = 2
     }
 }
